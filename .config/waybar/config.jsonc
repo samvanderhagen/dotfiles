@@ -1,0 +1,60 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-right": 10,
+  "spacing": 6,
+
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["cpu", "memory", "pulseaudio", "network", "bluetooth", "battery", "tray"],
+
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "persistent-workspaces": { "*": 5 },
+    "on-click": "activate"
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 40,
+    "separate-outputs": true
+  },
+  "clock": {
+    "format": "\uf017  {:%H:%M}",
+    "format-alt": "\uf017  {:%A, %d de %B}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+  },
+  "cpu": { "format": "\uf2db  {usage}%", "interval": 3 },
+  "memory": { "format": "\udb80\udf5b  {percentage}%", "interval": 5 },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "\udb81\udf5f  mudo",
+    "format-icons": { "default": ["\uf026", "\uf027", "\uf028"] },
+    "on-click": "pavucontrol",
+    "scroll-step": 5
+  },
+  "network": {
+    "format-wifi": "\uf1eb  {essid}",
+    "format-ethernet": "\udb80\ude00  cabo",
+    "format-disconnected": "\udb81\uddaa  off",
+    "tooltip-format": "{ifname}: {ipaddr}"
+  },
+  "battery": {
+    "format": "{icon}  {capacity}%",
+    "format-charging": "\udb80\udc84  {capacity}%",
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    "states": { "warning": 25, "critical": 10 }
+  },
+  "bluetooth": {
+    "format": "\uf293",
+    "format-connected": "\udb80\udcb1 {num_connections}",
+    "format-off": "\udb80\udcb2",
+    "format-disabled": "\udb80\udcb2",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueman-manager"
+  },
+  "tray": { "spacing": 8 }
+}

@@ -1,0 +1,11 @@
+brave-bin
+claude-desktop
+google-chrome
+overskride
+paru
+pwvucontrol
+sddm-astronaut-theme
+snapd
+ventoy
+woeusb-ng
+yay
